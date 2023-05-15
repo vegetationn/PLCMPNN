@@ -30,11 +30,11 @@ def main(args):
         smiles, mols, graphs, labels = pickle.load(f)
 
     # split dataset(if need!)
-    if not os.path.exists(f'{args.result_path}/{args.data_name}_split_{args.split_type}_seed_{args.seed}_batch_{args.batch_size}_lr_{args.learning_rate}') or args.resplit:
+    if not os.path.exists(f'{args.result_path}/{args.data_name}_split_{args.split_type}') or args.resplit:
 
         # build a folder
-        if not os.path.exists(f'{args.result_path}/{args.data_name}_split_{args.split_type}_seed_{args.seed}_batch_{args.batch_size}_lr_{args.learning_rate}'):
-            os.makedirs(f'{args.result_path}/{args.data_name}_split_{args.split_type}_seed_{args.seed}_batch_{args.batch_size}_lr_{args.learning_rate}')
+        if not os.path.exists(f'{args.result_path}/{args.data_name}_split_{args.split_type}'):
+            os.makedirs(f'{args.result_path}/{args.data_name}_split_{args.split_type}')
 
         # scaffold split
         if args.split_type == 'scaffold':
@@ -46,27 +46,29 @@ def main(args):
             raise "not supported split type, please refer the split type"
 
         # use pickle instead of txt since there are various smiles that correspond to the same molecule
-        with open(f'{args.result_path}/{args.data_name}_split_{args.split_type}_seed_{args.seed}_batch_{args.batch_size}_lr_{args.learning_rate}/train.pickle', 'wb') as fw:
-                pickle.dump(train_smiles, fw)
-        with open(f'{args.result_path}/{args.data_name}_split_{args.split_type}_seed_{args.seed}_batch_{args.batch_size}_lr_{args.learning_rate}/valid.pickle', 'wb') as fw:
-                pickle.dump(valid_smiles, fw)
-        with open(f'{args.result_path}/{args.data_name}_split_{args.split_type}_seed_{args.seed}_batch_{args.batch_size}_lr_{args.learning_rate}/test.pickle', 'wb') as fw:
-                pickle.dump(test_smiles, fw)
+        with open(f'{args.result_path}/{args.data_name}_split_{args.split_type}/train.pickle', 'wb') as fw:
+            pickle.dump(train_smiles, fw)
+        with open(f'{args.result_path}/{args.data_name}_split_{args.split_type}/valid.pickle', 'wb') as fw:
+            pickle.dump(valid_smiles, fw)
+        with open(f'{args.result_path}/{args.data_name}_split_{args.split_type}/test.pickle', 'wb') as fw:
+            pickle.dump(test_smiles, fw)
 
     # load pickle
     if args.split_type in ['scaffold', 'random']:
-        with open(f'{args.result_path}/{args.data_name}_split_{args.split_type}_seed_{args.seed}_batch_{args.batch_size}_lr_{args.learning_rate}/train.pickle', 'rb') as f:
+        with open(f'{args.result_path}/{args.data_name}_split_{args.split_type}/train.pickle', 'rb') as f:
             train_smiles = pickle.load(f)
-        with open(f'{args.result_path}/{args.data_name}_split_{args.split_type}_seed_{args.seed}_batch_{args.batch_size}_lr_{args.learning_rate}/valid.pickle', 'rb') as f:
+        with open(f'{args.result_path}/{args.data_name}_split_{args.split_type}/valid.pickle', 'rb') as f:
             valid_smiles = pickle.load(f)
-        with open(f'{args.result_path}/{args.data_name}_split_{args.split_type}_seed_{args.seed}_batch_{args.batch_size}_lr_{args.learning_rate}/test.pickle', 'rb') as f:
+        with open(f'{args.result_path}/{args.data_name}_split_{args.split_type}/test.pickle', 'rb') as f:
             test_smiles = pickle.load(f)
     else:
         raise "not supported split type, please refer the split type"
 
     # task setting
-    if args.data_name in ['bace', 'bbbp', 'clintox', 'hiv', 'sider', 'tox21', 'toxcast']:
+    if args.data_name in ['bace', 'bbbp', 'chembl', 'clintox', 'hiv', 'sider', 'tox21', 'toxcast']:
         args.task_type, args.task_loss, args.task_metric = 'classification', 'bce', 'auc'
+    elif args.data_name in ['muv', 'pcba']:
+        args.task_type, args.task_loss, args.task_metric = 'classification', 'bce', 'prc-auc'
     elif args.data_name in ['esol', 'freesolv', 'lipophilicity']:
         args.task_type, args.task_loss, args.task_metric = 'regression', 'mse', 'rmse'
     elif args.data_name in ['qm7', 'qm8', 'qm9']:
@@ -85,12 +87,12 @@ def main(args):
         label_mean = torch.from_numpy(np.array([[0 for _ in range(args.task_number)]])).long().to(device)
         label_std = torch.from_numpy(np.array([[1 for _ in range(args.task_number)]])).long().to(device)
 
-    # 创建结果文件夹
-    result_dir = f'{args.result_path}/{args.data_name}/plcmpnn_seed_{args.seed}_batch_{args.batch_size}_lr_{args.learning_rate}'
+    # # 创建结果文件夹
+    result_dir = f'{args.result_path}/{args.data_name}_split_{args.split_type}/plcmpnn_seed_{args.seed}_batch_{args.batch_size}_lr_{args.learning_rate}'
     version = 0
     while os.path.exists(result_dir):
         version += 1
-        result_dir = f'{args.result_path}/{args.data_name}/plcmpnn_seed_{args.seed}_batch_{args.batch_size}_lr_{args.learning_rate}_v{version}'
+        result_dir = f'{args.result_path}/{args.data_name}_split_{args.split_type}/plcmpnn_seed_{args.seed}_batch_{args.batch_size}_lr_{args.learning_rate}_v{version}'
     os.makedirs(result_dir, exist_ok=True)
 
     # 实例化数据模块
@@ -109,7 +111,7 @@ def main(args):
     checkpoint_callback = ModelCheckpoint(monitor='valid_avg_loss', dirpath=f'{result_dir}/checkpoints/', filename='best_checkpoint', save_top_k=1, mode='min')
 
     # 自定义日志记录器
-    logger = TensorBoardLogger(save_dir=f'{args.result_path}/{args.data_name}', name=f'plcmpnn_seed_{args.seed}_batch_{args.batch_size}_lr_{args.learning_rate}_logs')
+    logger = TensorBoardLogger(save_dir=f'{args.result_path}/{args.data_name}_split_{args.split_type}', name=f'plcmpnn_seed_{args.seed}_batch_{args.batch_size}_lr_{args.learning_rate}_logs')
 
     # 实例化训练器
     trainer = Trainer.from_argparse_args(args, callbacks=[checkpoint_callback], num_sanity_val_steps=0, logger=logger)
@@ -127,7 +129,7 @@ def main(args):
 
     print(f'Best Epoch: {epoch} | Best Loss: {valid_avg_loss:.4f}\n')
 
-    with open(f'{args.result_path}/{args.data_name}_split_{args.split_type}_seed_{args.seed}_batch_{args.batch_size}_lr_{args.learning_rate}/results.txt', 'a') as f:
+    with open(f'{result_dir}/results.txt', 'a') as f:
         f.write(f'\nBest Epoch: {epoch}  Best Loss: {valid_avg_loss:.4f}\n')
 
     # 加载检查点并创建新的模型对象
@@ -157,7 +159,7 @@ if __name__ == '__main__':
     # dataset setting
     parser.add_argument('--data_path', type=str, default='./data',
                         help='The full path of features of the data.')
-    parser.add_argument('--data_name', type=str, default='bbbp',
+    parser.add_argument('--data_name', type=str, default='bace',
                         help='the dataset name')
     parser.add_argument('--split_type', type=str, default='scaffold',
                         help="the dataset split type")
