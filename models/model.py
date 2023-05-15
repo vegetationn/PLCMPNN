@@ -1,3 +1,9 @@
+"""
+    reference from
+    https://github.com/SY575/CMPNN/
+    https://github.com/jcchan23/SAIL/tree/main/Repeat/CMPNN
+"""
+
 import dgl
 import math
 import torch
@@ -86,9 +92,9 @@ class CMPNN(nn.Module):
         self.pooling = BatchGRU(hidden_features)
 
         self.ffn = nn.Sequential(
-            nn.Linear(2 * hidden_features, hidden_features), 
+            nn.Linear(2 * hidden_features, hidden_features),
             nn.ReLU(),
-            nn.Linear(hidden_features, output_features), 
+            nn.Linear(hidden_features, output_features),
         )
 
     def message_func(self, edges):
