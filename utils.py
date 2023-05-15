@@ -128,11 +128,29 @@ def cal_metric(y_true, y_pred, metric_name, data_mean, data_std):
             # if all 0's or all 1's, append nan in multitask labels, raise error in single task label.
             if len(set(true)) == 1:
                 if y_true.shape[1] > 1:
-                    score_list.append(float('nan')) 
+                    score_list.append(float('nan'))
                 else:
                     raise "the single task label are all 0's or 1's!"
             else:
                 score_list.append(metrics.roc_auc_score(y_true=true, y_score=pred))
+        metric = np.nanmean(score_list)
+    elif metric_name == 'prc-auc':
+        # convert labels to long
+        y_true = y_true.astype(np.int64)
+        score_list = list()
+        for task_idx in range(y_true.shape[1]):
+            true, pred = y_true[:, task_idx], y_pred[:, task_idx]
+            # only calculate the label 0's and 1's, ignore label -1's.
+            true, pred = true[np.where(true >= 0)], pred[np.where(true >= 0)]
+            # if all 0's or all 1's, append nan in multitask labels, raise error in single task label.
+            if len(set(true)) == 1:
+                if y_true.shape[1] > 1:
+                    score_list.append(float('nan'))
+                else:
+                    raise "the single task label are all 0's or 1's!"
+            else:
+                precision, recall, _ = metrics.precision_recall_curve(y_true=true, probas_pred=pred)
+                score_list.append(metrics.auc(recall, precision))
         metric = np.nanmean(score_list)
     else:
         raise "please refer metric function!"
