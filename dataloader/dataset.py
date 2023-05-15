@@ -98,7 +98,7 @@ class MoleculeDataset(Dataset):
             max([graph.edata['x'].shape[1] if len(graph.edata['x'].shape) > 1 else 0 for graph in self.graphs])
 
 
-def build_dgl_graph(smiles, labels, store_path, mode="bbbp"):
+def build_dgl_graph(smiles, labels, store_path, mode="bace"):
 
     print(f"Building {mode} dgl graphs")
     smiles_list, mols_dict, graphs_dict, labels_dict = list(), dict(), dict(), dict()
@@ -126,7 +126,7 @@ def build_dgl_graph(smiles, labels, store_path, mode="bbbp"):
         node_features = np.array([get_atom_features(atom) for atom in mol.GetAtoms()])
         graph.ndata['x'] = torch.from_numpy(node_features).float()
 
-        # (num_edges, edge_in_dim)                
+        # (num_edges, edge_in_dim)
         rows, cols, bond_features = list(), list(), list()
         for bond in mol.GetBonds():
             features = get_bond_features(bond)
@@ -209,6 +209,13 @@ if __name__ == "__main__":
     labels = data['exp'].values.tolist()
     build_dgl_graph(smiles, labels, result_path, mode="lipophilicity")
 
+    # muv
+    data = pd.read_csv(f'{data_path}/muv.csv', sep=',')
+    data = data.fillna(-1.0)
+    smiles = data['smiles'].values.tolist()
+    labels = data.iloc[:, 0:-2].values.tolist()
+    build_dgl_graph(smiles, labels, result_path, mode="muv")
+
     # qm7
     data = pd.read_csv(f'{data_path}/qm7.csv', sep=',')
     data = data.fillna(-1.0)
@@ -250,3 +257,17 @@ if __name__ == "__main__":
     smiles = data['smiles'].values.tolist()
     labels = data.iloc[:, 1:].values.tolist()
     build_dgl_graph(smiles, labels, result_path, mode="toxcast")
+
+    # # chembl
+    # data = pd.read_csv(f'{data_path}/preprocessed_chembl.csv', sep=',')
+    # data = data.fillna(-1.0)
+    # smiles = data['smiles'].values.tolist()
+    # labels = data.iloc[:, 0:-2].values.tolist()
+    # build_dgl_graph(smiles, labels, result_path, mode="chembl")
+
+    # # pcba
+    # data = pd.read_csv(f'{data_path}/pcba.csv', sep=',')
+    # data = data.fillna(-1.0)
+    # smiles = data['smiles'].values.tolist()
+    # labels = data.iloc[:, 0:-2].values.tolist()
+    # build_dgl_graph(smiles, labels, result_path, mode="pcba")
