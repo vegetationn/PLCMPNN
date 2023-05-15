@@ -1,0 +1,124 @@
+Epoch: 1
+valid: rmse: 1.5257   loss: 0.4618
+Epoch: 1
+train: rmse: 1.8655   loss: 0.7429
+Epoch: 2
+valid: rmse: 1.5712   loss: 0.4897
+Epoch: 2
+train: rmse: 1.3962   loss: 0.4162
+Epoch: 3
+valid: rmse: 1.3079   loss: 0.3393
+Epoch: 3
+train: rmse: 1.2838   loss: 0.3519
+Epoch: 4
+valid: rmse: 1.0846   loss: 0.2333
+Epoch: 4
+train: rmse: 1.0778   loss: 0.2480
+Epoch: 5
+valid: rmse: 0.8961   loss: 0.1593
+Epoch: 5
+train: rmse: 0.9521   loss: 0.1935
+Epoch: 6
+valid: rmse: 0.9947   loss: 0.1963
+Epoch: 6
+train: rmse: 0.8815   loss: 0.1659
+Epoch: 7
+valid: rmse: 0.8658   loss: 0.1487
+Epoch: 7
+train: rmse: 0.8869   loss: 0.1679
+Epoch: 8
+valid: rmse: 1.0639   loss: 0.2245
+Epoch: 8
+train: rmse: 0.7638   loss: 0.1246
+Epoch: 9
+valid: rmse: 1.1056   loss: 0.2425
+Epoch: 9
+train: rmse: 0.8467   loss: 0.1530
+Epoch: 10
+valid: rmse: 0.7402   loss: 0.1087
+Epoch: 10
+train: rmse: 0.8406   loss: 0.1509
+Epoch: 11
+valid: rmse: 0.7009   loss: 0.0974
+Epoch: 11
+train: rmse: 0.6642   loss: 0.0942
+Epoch: 12
+valid: rmse: 0.9898   loss: 0.1943
+Epoch: 12
+train: rmse: 0.6265   loss: 0.0838
+Epoch: 13
+valid: rmse: 0.8225   loss: 0.1342
+Epoch: 13
+train: rmse: 0.6295   loss: 0.0846
+Epoch: 14
+valid: rmse: 0.8818   loss: 0.1542
+Epoch: 14
+train: rmse: 0.6029   loss: 0.0776
+Epoch: 15
+valid: rmse: 0.6483   loss: 0.0834
+Epoch: 15
+train: rmse: 0.6030   loss: 0.0776
+Epoch: 16
+valid: rmse: 0.8892   loss: 0.1569
+Epoch: 16
+train: rmse: 0.5215   loss: 0.0581
+Epoch: 17
+valid: rmse: 0.9947   loss: 0.1963
+Epoch: 17
+train: rmse: 0.6125   loss: 0.0801
+Epoch: 18
+valid: rmse: 0.7735   loss: 0.1187
+Epoch: 18
+train: rmse: 0.7361   loss: 0.1157
+Epoch: 19
+valid: rmse: 0.7588   loss: 0.1142
+Epoch: 19
+train: rmse: 0.6114   loss: 0.0798
+Epoch: 20
+valid: rmse: 0.7126   loss: 0.1007
+Epoch: 20
+train: rmse: 0.5166   loss: 0.0570
+Epoch: 21
+valid: rmse: 0.6374   loss: 0.0806
+Epoch: 21
+train: rmse: 0.4804   loss: 0.0493
+Epoch: 22
+valid: rmse: 0.6299   loss: 0.0787
+Epoch: 22
+train: rmse: 0.4371   loss: 0.0408
+Epoch: 23
+valid: rmse: 0.7553   loss: 0.1132
+Epoch: 23
+train: rmse: 0.4969   loss: 0.0527
+Epoch: 24
+valid: rmse: 0.6902   loss: 0.0945
+Epoch: 24
+train: rmse: 0.4962   loss: 0.0526
+Epoch: 25
+valid: rmse: 0.6367   loss: 0.0804
+Epoch: 25
+train: rmse: 0.4293   loss: 0.0393
+Epoch: 26
+valid: rmse: 0.6762   loss: 0.0907
+Epoch: 26
+train: rmse: 0.4258   loss: 0.0387
+Epoch: 27
+valid: rmse: 0.6623   loss: 0.0870
+Epoch: 27
+train: rmse: 0.4471   loss: 0.0427
+Epoch: 28
+valid: rmse: 0.6160   loss: 0.0753
+Epoch: 28
+train: rmse: 0.4688   loss: 0.0469
+Epoch: 29
+valid: rmse: 0.7476   loss: 0.1109
+Epoch: 29
+train: rmse: 0.4177   loss: 0.0373
+Epoch: 30
+valid: rmse: 0.7080   loss: 0.0994
+Epoch: 30
+train: rmse: 0.5874   loss: 0.0737
+
+Best Epoch: 28  Best Loss: 0.0753
+
+test: rmse: 0.5919   test loss: 0.0695
