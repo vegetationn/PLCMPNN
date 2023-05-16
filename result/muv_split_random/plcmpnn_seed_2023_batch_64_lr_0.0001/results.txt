@@ -1,0 +1,56 @@
+Epoch: 1
+valid: prc-auc: 0.0054   loss: 0.0024
+Epoch: 1
+train: prc-auc: 0.0026   loss: 0.0033
+Epoch: 2
+valid: prc-auc: 0.0098   loss: 0.0023
+Epoch: 2
+train: prc-auc: 0.0030   loss: 0.0023
+Epoch: 3
+valid: prc-auc: 0.0119   loss: 0.0023
+Epoch: 3
+train: prc-auc: 0.0036   loss: 0.0023
+Epoch: 4
+valid: prc-auc: 0.0144   loss: 0.0022
+Epoch: 4
+train: prc-auc: 0.0048   loss: 0.0023
+Epoch: 5
+valid: prc-auc: 0.0181   loss: 0.0023
+Epoch: 5
+train: prc-auc: 0.0068   loss: 0.0022
+Epoch: 6
+valid: prc-auc: 0.0450   loss: 0.0022
+Epoch: 6
+train: prc-auc: 0.0122   loss: 0.0021
+Epoch: 7
+valid: prc-auc: 0.0764   loss: 0.0021
+Epoch: 7
+train: prc-auc: 0.0233   loss: 0.0020
+Epoch: 8
+valid: prc-auc: 0.0555   loss: 0.0021
+Epoch: 8
+train: prc-auc: 0.0439   loss: 0.0019
+Epoch: 9
+valid: prc-auc: 0.0703   loss: 0.0021
+Epoch: 9
+train: prc-auc: 0.0633   loss: 0.0018
+Epoch: 10
+valid: prc-auc: 0.0748   loss: 0.0020
+Epoch: 10
+train: prc-auc: 0.1083   loss: 0.0017
+Epoch: 11
+valid: prc-auc: 0.0572   loss: 0.0021
+Epoch: 11
+train: prc-auc: 0.1739   loss: 0.0016
+Epoch: 12
+valid: prc-auc: 0.0565   loss: 0.0023
+Epoch: 12
+train: prc-auc: 0.2172   loss: 0.0015
+Epoch: 13
+valid: prc-auc: 0.0564   loss: 0.0022
+Epoch: 13
+train: prc-auc: 0.2842   loss: 0.0013
+Epoch: 14
+valid: prc-auc: 0.0580   loss: 0.0022
+Epoch: 14
+train: prc-auc: 0.3427   loss: 0.0012
