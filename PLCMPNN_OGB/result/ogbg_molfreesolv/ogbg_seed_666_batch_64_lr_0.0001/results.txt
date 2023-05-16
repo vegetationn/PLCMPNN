@@ -1,0 +1,8 @@
+Epoch: 1
+valid: rmse: 6.2793   loss: 3.6705
+Epoch: 1
+train: rmse: 3.0535   loss: 0.7730
+Epoch: 2
+valid: rmse: 6.2846   loss: 3.6767
+Epoch: 2
+train: rmse: 2.7831   loss: 0.6422
