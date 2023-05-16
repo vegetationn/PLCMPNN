@@ -1,0 +1,8 @@
+Epoch: 1
+valid: prc-auc: 0.0110   loss: 0.0023
+Epoch: 1
+train: prc-auc: 0.0022   loss: 0.0033
+Epoch: 2
+valid: prc-auc: 0.0417   loss: 0.0022
+Epoch: 2
+train: prc-auc: 0.0029   loss: 0.0023
