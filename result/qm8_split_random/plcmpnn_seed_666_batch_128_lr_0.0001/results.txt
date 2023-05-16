@@ -1,0 +1,124 @@
+Epoch: 1
+valid: mae: 0.0236   loss: 0.4847
+Epoch: 1
+train: mae: 0.0263   loss: 0.6144
+Epoch: 2
+valid: mae: 0.0217   loss: 0.4278
+Epoch: 2
+train: mae: 0.0214   loss: 0.4300
+Epoch: 3
+valid: mae: 0.0211   loss: 0.3812
+Epoch: 3
+train: mae: 0.0196   loss: 0.3736
+Epoch: 4
+valid: mae: 0.0187   loss: 0.3164
+Epoch: 4
+train: mae: 0.0186   loss: 0.3408
+Epoch: 5
+valid: mae: 0.0199   loss: 0.3312
+Epoch: 5
+train: mae: 0.0179   loss: 0.3172
+Epoch: 6
+valid: mae: 0.0168   loss: 0.2816
+Epoch: 6
+train: mae: 0.0171   loss: 0.2927
+Epoch: 7
+valid: mae: 0.0182   loss: 0.2893
+Epoch: 7
+train: mae: 0.0165   loss: 0.2731
+Epoch: 8
+valid: mae: 0.0159   loss: 0.2697
+Epoch: 8
+train: mae: 0.0160   loss: 0.2572
+Epoch: 9
+valid: mae: 0.0154   loss: 0.2467
+Epoch: 9
+train: mae: 0.0155   loss: 0.2406
+Epoch: 10
+valid: mae: 0.0155   loss: 0.2442
+Epoch: 10
+train: mae: 0.0151   loss: 0.2312
+Epoch: 11
+valid: mae: 0.0154   loss: 0.2298
+Epoch: 11
+train: mae: 0.0149   loss: 0.2258
+Epoch: 12
+valid: mae: 0.0146   loss: 0.2107
+Epoch: 12
+train: mae: 0.0145   loss: 0.2114
+Epoch: 13
+valid: mae: 0.0148   loss: 0.2271
+Epoch: 13
+train: mae: 0.0141   loss: 0.2034
+Epoch: 14
+valid: mae: 0.0146   loss: 0.2147
+Epoch: 14
+train: mae: 0.0138   loss: 0.1930
+Epoch: 15
+valid: mae: 0.0149   loss: 0.2312
+Epoch: 15
+train: mae: 0.0139   loss: 0.1935
+Epoch: 16
+valid: mae: 0.0142   loss: 0.2043
+Epoch: 16
+train: mae: 0.0134   loss: 0.1818
+Epoch: 17
+valid: mae: 0.0146   loss: 0.2144
+Epoch: 17
+train: mae: 0.0133   loss: 0.1792
+Epoch: 18
+valid: mae: 0.0138   loss: 0.1981
+Epoch: 18
+train: mae: 0.0132   loss: 0.1744
+Epoch: 19
+valid: mae: 0.0148   loss: 0.2157
+Epoch: 19
+train: mae: 0.0129   loss: 0.1652
+Epoch: 20
+valid: mae: 0.0140   loss: 0.1980
+Epoch: 20
+train: mae: 0.0127   loss: 0.1634
+Epoch: 21
+valid: mae: 0.0138   loss: 0.1941
+Epoch: 21
+train: mae: 0.0126   loss: 0.1576
+Epoch: 22
+valid: mae: 0.0138   loss: 0.1956
+Epoch: 22
+train: mae: 0.0124   loss: 0.1530
+Epoch: 23
+valid: mae: 0.0135   loss: 0.1836
+Epoch: 23
+train: mae: 0.0122   loss: 0.1493
+Epoch: 24
+valid: mae: 0.0135   loss: 0.1861
+Epoch: 24
+train: mae: 0.0122   loss: 0.1461
+Epoch: 25
+valid: mae: 0.0132   loss: 0.1834
+Epoch: 25
+train: mae: 0.0118   loss: 0.1360
+Epoch: 26
+valid: mae: 0.0137   loss: 0.1927
+Epoch: 26
+train: mae: 0.0117   loss: 0.1339
+Epoch: 27
+valid: mae: 0.0135   loss: 0.1925
+Epoch: 27
+train: mae: 0.0116   loss: 0.1308
+Epoch: 28
+valid: mae: 0.0131   loss: 0.1809
+Epoch: 28
+train: mae: 0.0113   loss: 0.1246
+Epoch: 29
+valid: mae: 0.0129   loss: 0.1821
+Epoch: 29
+train: mae: 0.0112   loss: 0.1210
+Epoch: 30
+valid: mae: 0.0129   loss: 0.1815
+Epoch: 30
+train: mae: 0.0113   loss: 0.1226
+
+Best Epoch: 28  Best Loss: 0.1809
+
+test: mae: 0.0126   test loss: 0.1676
