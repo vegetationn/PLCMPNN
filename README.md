@@ -2,6 +2,11 @@
 
 Reimplementation of the CMPNN model by using dgl and PyTorch Lightning.
 
+For the full version, please use Baidu Netdisk to view, the access link is as follows：
+
+*链接：https://pan.baidu.com/s/18YHY3_zpG0Mp7dfdBJn2gg?pwd=l1t7  提取码：l1t7*
+
+
 The original implementation of CMPNN could be referred at [CMPNN](https://github.com/SY575/CMPNN) and [CMPNN-dgl](https://github.com/jcchan23/SAIL/tree/main/Repeat/CMPNN). Thanks a lot for their working! 
 
 The IJCAI 2020 paper could be referred at [Communicative Representation Learning on Attributed Molecular Graphs](https://www.ijcai.org/Proceedings/2020/0392.pdf).
